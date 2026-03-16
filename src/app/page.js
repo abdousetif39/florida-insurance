@@ -19,24 +19,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       
-      {/* Header / Navbar */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <Car className="h-8 w-8 text-blue-600 mr-2" />
-              <span className="font-bold text-xl md:text-2xl tracking-tight text-slate-900">
-                AutoInsurance<span className="text-blue-600">Florida</span>
-              </span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#compare" className="text-slate-600 hover:text-blue-600 font-medium transition">Compare Quotes</a>
-              <a href="#guides" className="text-slate-600 hover:text-blue-600 font-medium transition">Florida Guides</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+     
       {/* Hero Section */}
       <section className="relative bg-blue-900 overflow-hidden">
         <div className="absolute inset-0">
@@ -165,37 +148,7 @@ export default function Home() {
 
       </div>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-            <div className="mb-8 md:mb-0">
-              <div className="flex items-center mb-4">
-                <Car className="h-6 w-6 text-blue-500 mr-2" />
-                <span className="font-bold text-xl text-white">AutoInsurance<span className="text-blue-500">Florida</span></span>
-              </div>
-              <p className="text-sm text-slate-400 max-w-md">
-                Helping Florida drivers find affordable, reliable auto insurance coverage through expert comparison and comprehensive guides.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-2 text-sm">
-              <a href="#" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition">Terms of Service</a>
-              <a href="#" className="hover:text-white transition">Contact Us</a>
-            </div>
-          </div>
-          
-          <div className="mt-8 pt-8 border-t border-slate-800 flex items-start text-xs text-slate-500">
-            <Info className="h-4 w-4 mr-2 shrink-0 mt-0.5" />
-            <p>
-              <strong>Advertising Disclosure:</strong> This website is an independent, advertising-supported comparison service. We may receive compensation from the insurance providers featured on this site if you click on their links or get a quote. This compensation may impact how and where products appear.
-            </p>
-          </div>
-          <div className="mt-4 text-center text-xs text-slate-600">
-            &copy; {new Date().getFullYear()} AutoInsuranceCompaniesFlorida.com. All rights reserved.
-          </div>
-        </div>
-      </footer>
+     
     </main>
   );
 }

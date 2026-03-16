@@ -1,8 +1,8 @@
 import './globals.css';
 import Link from 'next/link';
 import { Car, Info } from 'lucide-react';
+import { floridaCities } from '../data/cities';
 
-// إعدادات الـ Metadata الديناميكية الاحترافية
 export const metadata = {
   title: {
     default: "Auto Insurance Florida",
@@ -14,7 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    // تم إضافة data-scroll-behavior="smooth" هنا لحل التحذير
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className="bg-slate-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
         
         {/* Navigation */}
@@ -44,8 +45,9 @@ export default function RootLayout({ children }) {
         {/* Footer */}
         <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 mt-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-              <div className="mb-8 md:mb-0">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              
+              <div className="md:col-span-2 mb-8 md:mb-0">
                 <div className="flex items-center mb-4">
                   <Car className="h-6 w-6 text-blue-500 mr-2" />
                   <span className="font-bold text-xl text-white">AutoInsurance<span className="text-blue-500">Florida</span></span>
@@ -54,12 +56,34 @@ export default function RootLayout({ children }) {
                   Helping Florida drivers find affordable, reliable auto insurance coverage through expert comparison and comprehensive guides.
                 </p>
               </div>
-              <div className="flex flex-col space-y-2 text-sm">
-                <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-white transition">Terms of Service</Link>
-                <Link href="/about" className="hover:text-white transition">About Us</Link>
-                <Link href="/contact" className="hover:text-white transition">Contact Us</Link>
+
+              <div>
+                <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+                  <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
+                  <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+                  <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+                </ul>
               </div>
+
+              {/* توليد روابط المدن تلقائياً */}
+              <div>
+                <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Top Cities</h4>
+                <ul className="space-y-2 text-sm">
+                  {floridaCities.slice(0, 4).map((city) => {
+                    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                    return (
+                      <li key={city}>
+                        <Link href={`/${city}-auto-insurance`} className="hover:text-white transition">
+                          {formattedCity} Auto Insurance
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
             </div>
             
             <div className="mt-8 pt-8 border-t border-slate-800 flex items-start text-xs text-slate-500">

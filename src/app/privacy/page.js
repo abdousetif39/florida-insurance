@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Privacy Policy",
-  description: "Learn how AutoInsuranceCompaniesFlorida.com collects, uses, and protects your personal information.",
+  description: "Learn how AutoInsuranceCompaniesFlorida.com collects, uses, and protects your personal information and data.",
 };
 
 export default function PrivacyPolicy() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold text-slate-900 mb-8">Privacy Policy</h1>
-      <div className="prose prose-blue max-w-none text-slate-700 space-y-6">
-        <p>Last updated: {new Date().toLocaleDateString()}</p>
+      <div className="prose prose-lg prose-blue max-w-none text-slate-700 space-y-6">
+        <p><strong>Last updated:</strong> {new Date().toLocaleDateString()}</p>
         
         <h2 className="text-2xl font-bold text-slate-900 mt-8">1. Information We Collect</h2>
         <p>At AutoInsuranceCompaniesFlorida.com, the privacy of our visitors is of extreme importance to us. This privacy policy document outlines the types of personal information is received and collected by our website and how it is used.</p>
