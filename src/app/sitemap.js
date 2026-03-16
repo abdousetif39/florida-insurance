@@ -1,24 +1,27 @@
 import { floridaCities } from '../data/cities';
+import { blogPosts } from '../data/blogPosts';
 
 export default function sitemap() {
   const baseUrl = "https://www.autoinsurancecompaniesflorida.com";
   const currentDate = new Date();
 
   // 1. الصفحات الأساسية
-  const baseRoutes = [
-    { url: baseUrl, lastModified: currentDate },
-    { url: `${baseUrl}/about`, lastModified: currentDate },
-    { url: `${baseUrl}/contact`, lastModified: currentDate },
-    { url: `${baseUrl}/privacy`, lastModified: currentDate },
-    { url: `${baseUrl}/terms`, lastModified: currentDate },
-  ];
+  const baseRoutes = ["", "/about", "/contact", "/privacy", "/terms", "/blog"].map(route => ({
+    url: `${baseUrl}${route}`,
+    lastModified: currentDate,
+  }));
 
-  // 2. توليد روابط المدن تلقائياً من ملف البيانات
+  // 2. صفحات المدن
   const cityRoutes = floridaCities.map((city) => ({
     url: `${baseUrl}/${city}-auto-insurance`,
     lastModified: currentDate,
   }));
 
-  // دمج القائمتين معاً وإرسالهما لجوجل
-  return [...baseRoutes, ...cityRoutes];
+  // 3. صفحات المقالات (جديد!)
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: currentDate,
+  }));
+
+  return [...baseRoutes, ...cityRoutes, ...blogRoutes];
 }
