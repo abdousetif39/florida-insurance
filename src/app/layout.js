@@ -9,6 +9,7 @@ export const metadata = {
     template: "%s | Auto Insurance Florida",
   },
   description: "Compare cheap auto insurance quotes in Florida. Find the best providers, understand PIP laws, and save money today.",
+  google-site-verification: "awZjbIaxmDMOArrAMSOTR6jpgYPSt4T9yowypanJ4qM",
   keywords: 'auto insurance florida, cheap car insurance miami, florida car insurance quotes',
 };
 
