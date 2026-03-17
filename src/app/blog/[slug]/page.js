@@ -86,9 +86,9 @@ export default async function BlogPostPage({ params }) {
               <p className="text-blue-100 mb-8 max-w-lg mx-auto">
                 Join thousands of Florida residents who found cheaper rates using our independent comparison tools.
               </p>
-              <Link href="/" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg">
-                Get Your Free Quote <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              <a href="https://afflat3c2.com/trk/lnk/8736DC01-8F47-40DD-8D3C-C2F814075491/?o=31202&c=918277&a=790327&k=B7A7682872F318AEFCB7CF473FC792A5&l=36289" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+              Get Your Free Quote <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </div>
           </div>
         </article>
