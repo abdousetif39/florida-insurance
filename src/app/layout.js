@@ -1,5 +1,6 @@
 import './globals.css';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Car, Info } from 'lucide-react';
 import { floridaCities } from '../data/cities';
 
@@ -9,12 +10,10 @@ export const metadata = {
     template: "%s | Auto Insurance Florida",
   },
   description: "Compare cheap auto insurance quotes in Florida. Find the best providers, understand PIP laws, and save money today.",
-  // الطريقة الصحيحة لإضافة كود جوجل في Next.js
   verification: {
     google: "awZjbIaxmDMOArrAMSOTR6jpgYPSt4T9yowypanJ4qM",
   },
   keywords: 'auto insurance florida, cheap car insurance miami, florida car insurance quotes',
-  // لضمان ظهور الأيقونة بشكل سليم
   icons: {
     icon: '/favicon.ico',
   },
@@ -25,7 +24,18 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className="bg-slate-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
         
-        {/* Navigation */}
+        {/* أكواد Google Analytics المدمجة باحترافية لـ Next.js */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-03M66NMF9K" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-03M66NMF9K');
+          `}
+        </Script>
+
+        {/* القائمة العلوية (Navigation) */}
         <nav className="bg-white shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
@@ -38,10 +48,7 @@ export default function RootLayout({ children }) {
               
               <div className="hidden md:flex items-center space-x-8">
                 <Link href="/" className="text-slate-600 hover:text-blue-600 font-medium transition border-b-2 border-transparent hover:border-blue-600 pb-1">Home</Link>
-                
-                {/* رابط المدونة */}
                 <Link href="/blog" className="text-blue-600 font-bold hover:text-blue-700 transition border-b-2 border-blue-600 pb-1">Blog</Link>
-                
                 <Link href="/about" className="text-slate-600 hover:text-blue-600 font-medium transition">About Us</Link>
                 <Link href="/contact" className="text-white bg-blue-600 px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition shadow-sm">Contact</Link>
               </div>
@@ -49,12 +56,12 @@ export default function RootLayout({ children }) {
           </div>
         </nav>
 
-        {/* Content */}
+        {/* محتوى الصفحة */}
         <div className="flex-grow">
           {children}
         </div>
 
-        {/* Footer */}
+        {/* الفوتر (Footer) */}
         <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 mt-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
