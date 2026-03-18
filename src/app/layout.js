@@ -22,6 +22,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+      <head>
+        {/* Ezoic Privacy Scripts */}
+        <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+        <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+        {/* Ezoic Header Script */}
+        <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.ezstandalone = window.ezstandalone || {};
+              ezstandalone.cmd = ezstandalone.cmd || [];
+            `,
+          }}
+        />
+        <script src="//ezoicanalytics.com/analytics.js"></script>
+      </head>
       <body className="bg-slate-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
         
         {/* أكواد Google Analytics المدمجة باحترافية لـ Next.js */}

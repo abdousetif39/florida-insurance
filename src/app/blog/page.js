@@ -18,6 +18,11 @@ export default function BlogPage() {
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">Expert advice to help you navigate Florida laws and lower your premiums.</p>
         </div>
 
+        {/* إعلان Ezoic الأول: تحت العنوان الرئيسي */}
+        <div id="ezoic-pub-ad-placeholder-101"></div>
+        {/* مسافة فاصلة بسيطة لترتيب التصميم بعد الإعلان */}
+        <div className="mb-12"></div>
+
         {/* شبكة المقالات الـ 20 */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {blogPosts.map((post) => (
@@ -38,6 +43,10 @@ export default function BlogPage() {
           ))}
         </div>
 
+        {/* إعلان Ezoic الثاني: قبل صندوق الأفيليت */}
+        <div id="ezoic-pub-ad-placeholder-102"></div>
+        <div className="mb-12"></div>
+
         {/* صندوق عروض الأفيليت (MaxBounty) الجديد */}
         <div className="mt-12 p-10 bg-gradient-to-br from-blue-900 to-blue-800 rounded-3xl text-center text-white shadow-xl">
           <h2 className="text-3xl font-bold mb-4">Ready to see your real savings?</h2>
@@ -55,6 +64,19 @@ export default function BlogPage() {
         </div>
 
       </div>
+
+      {/* سكريبت تفعيل إعلانات Ezoic لهذه الصفحة (مدمج مرة واحدة كما هو مطلوب) */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof ezstandalone !== 'undefined') {
+              ezstandalone.cmd.push(function() {
+                ezstandalone.showAds(101, 102);
+              });
+            }
+          `,
+        }}
+      />
     </main>
   );
 }
