@@ -30,19 +30,27 @@ export async function getStaticProps({ params }) {
 
 const Head = ({ children }) => <div style={{ display: 'none' }} aria-hidden="true">{children}</div>;
 
-const AffiliateCTA = ({ city, label }) => (
-  <button className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white text-lg font-black py-4 px-10 rounded-full shadow-xl transition-all transform hover:-translate-y-1 hover:shadow-2xl">
+const AffiliateCTA = ({ label }) => (
+  <a
+    href="https://afflat3c2.com/trk/lnk/8736DC01-8F47-40DD-8D3C-C2F814075491/?o=29198&c=918277&a=790327&k=2475FC62D5DAB90ECA12D1AFBA3D443C&l=33019"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white text-lg font-black py-4 px-10 rounded-full shadow-xl transition-all transform hover:-translate-y-1 hover:shadow-2xl inline-block text-center"
+  >
     {label}
-  </button>
+  </a>
 );
 
 const StickyBottomCTA = ({ savingAmount }) => (
   <div className="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-200 p-4 shadow-[0_-10px_40px_rgba(0,0,0,0.08)] z-50 flex justify-center">
-    <button className="bg-green-500 hover:bg-green-600 text-white text-lg font-black py-4 px-8 rounded-full w-full max-w-md shadow-lg transition-colors flex items-center justify-center">
-      <Car className="mr-2" size={20} />
-      {/* ✅ Reduced Friction & High Conversion CTA */}
-      🔥 Compare Quotes in 60 Seconds & Save {savingAmount}
-    </button>
+    <a
+  href="https://afflat3c2.com/trk/lnk/8736DC01-8F47-40DD-8D3C-C2F814075491/?o=29198&c=918277&a=790327&k=2475FC62D5DAB90ECA12D1AFBA3D443C&l=33019"
+  target="_blank"
+  className="bg-green-500 hover:bg-green-600 text-white text-lg font-black py-4 px-8 rounded-full w-full max-w-md shadow-lg transition-colors flex items-center justify-center"
+>
+  <Car className="mr-2" size={20} />
+  🔥 Compare Quotes in 60 Seconds & Save {savingAmount}
+</a>
   </div>
 );
 
@@ -243,9 +251,13 @@ const FAQSection = ({ city }) => (
                          <td className="p-6 text-slate-900 text-lg flex items-center">
                             {comp}
                             {i === 0 && (
-                              <button className="ml-4 text-[11px] uppercase tracking-wider bg-blue-600 hover:bg-blue-700 transition-colors text-white px-3 py-1.5 rounded-full shadow-md font-black">
-                                View Rates
-                              </button>
+                              <a
+  href="https://afflat3c2.com/trk/lnk/8736DC01-8F47-40DD-8D3C-C2F814075491/?o=29198&c=918277&a=790327&k=2475FC62D5DAB90ECA12D1AFBA3D443C&l=33019"
+  target="_blank"
+  className="ml-4 text-[11px] uppercase tracking-wider bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-full shadow-md font-black"
+>
+  View Rates
+</a>
                             )}
                          </td>
                          <td className="p-6">
