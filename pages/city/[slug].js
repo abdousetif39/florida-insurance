@@ -339,7 +339,7 @@ const FAQSection = ({ city }) => (
            </h3>
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {city?.internalLinks?.map((link, i) => (
-                <a key={i} href={`#${link.slug}`} className="bg-white/10 p-5 rounded-2xl text-xs font-black hover:bg-white/20 transition-all flex items-center justify-between border border-white/5 group">
+                <a key={i} href={`/city/${link.slug}`} className="bg-white/10 p-5 rounded-2xl text-xs font-black hover:bg-white/20 transition-all flex items-center justify-between border border-white/5 group">
                    <span className="leading-relaxed text-[11px]">Best cheap car insurance in {link.anchor}, FL</span>
                    <ChevronRight size={14} className="text-blue-400 transform group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
                 </a>
